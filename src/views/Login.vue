@@ -30,7 +30,7 @@
 </template>
 <script lang="ts">
 import { ref, getCurrentInstance } from "vue"
-import { loginForm } from "@/components/form/LoginForm.vue"
+import loginForm from "@/components/form/LoginForm.vue"
 import { loginUser, rules } from "@/utils/loginValidators";
 
 export default {
@@ -43,7 +43,7 @@ export default {
 
     return {
       signUpModel,
-      loginUser，
+      loginUser,
       rules
     }
 

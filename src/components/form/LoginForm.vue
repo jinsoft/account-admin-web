@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { ref, getCurrentInstance } from "vue";
+import { ref, getCurrentInstance, onMounted } from "vue";
 
 export default {
   propos: {
@@ -51,11 +51,13 @@ export default {
     },
   },
   setup() {
-    const { ctx } = getCurrentInstance();
+    const root = ref<any>(null)
+   
+    // const { ctx } = getCurrentInstance();
 
     // 触发登录方法
     const handleLogin = (formName: string) => {
-      ctx.$refs[formName].validate((valid: boolean) => {
+        root.value.validate((valid: boolean) => {
         if (valid) {
           alert("submit!");
         } else {
@@ -64,7 +66,7 @@ export default {
         }
       });
     };
-    return { handleLogin };
+    return { handleLogin, root };
   },
 };
 </script>
