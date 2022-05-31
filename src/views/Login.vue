@@ -37,7 +37,7 @@ export default {
   name: "Login",
   components: { loginForm },
   setup() {
-    // const { ctx } = getCurrentInstance();
+    const { ctx } = getCurrentInstance();
     const signUpModel = ref<boolean>(false)
 
 
